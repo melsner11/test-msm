@@ -5,6 +5,7 @@ public class Apple {
     private int taste;
     private boolean hasWorm= true;
     private Color color;
+    private FruitState state;
 
     public Apple() {
     }
@@ -53,5 +54,19 @@ public class Apple {
      */
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    /**
+     * @return the state
+     */
+    public FruitState getState() {
+        return state;
+    }
+
+    /**
+     * @param state the state to set EATEN or PEELED
+     */
+    public void setState(FruitState state) {
+        this.state = state;
     }
 }

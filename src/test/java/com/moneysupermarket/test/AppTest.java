@@ -60,4 +60,25 @@ public class AppTest {
         apple.setColor(Color.GREEN);
         assertNotNull(apple.getColor());
     }
+
+    @Test
+    public void testSetColorBlue(){
+        Apple apple = new Apple();
+        apple.setColor(Color.BLUE);
+        assertEquals(Color.BLUE, apple.getColor());
+    }
+
+    @Test
+    public void testSetState(){
+        Apple apple = new Apple();
+        apple.setState(FruitState.PEELED);
+        assertNotNull(apple.getState());
+    }
+
+    @Test
+    public void testSetStateEaten(){
+        Apple apple = new Apple();
+        apple.setState(FruitState.EATEN);
+        assertEquals(FruitState.EATEN, apple.getState());
+    }
 }
