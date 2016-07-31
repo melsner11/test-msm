@@ -1,30 +1,45 @@
 package com.moneysupermarket.test;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import com.moneysupermarket.test.Apple;
 
 /**
- * Unit test for simple App.
+ * Unit test
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+public class AppTest {
+
+    public AppTest(){
+        super();
     }
 
     /**
-     * test create a new apple
+     * Test create a new apple
      */
-    public void testCreateApple()
-    {
+    @Test
+    public void testCreateApple(){
         Apple apple = new Apple();
         assertNotNull(apple);
+    }
+
+    @Test
+    public void testCreateAppleWithTasteInRange(){
+        Apple apple = new Apple();
+        apple.setTaste(3);
+        assertEquals(3, apple.getTaste());
+    }
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+    @Test
+    public void testCreateAppleWithWrongTasteThrowsIllegalArgumentException(){
+        Apple apple = new Apple();
+        thrown.expect(IllegalArgumentException.class);
+        apple.setTaste(12);
     }
 }

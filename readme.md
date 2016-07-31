@@ -5,9 +5,9 @@ The console app will parse  html code from the url an return a JSON Array of all
 
 # Requirements
 
-- maven
+- maven 3
 - java 1.7
-- JUnit
+- JUnit 4.11
 
 ### compile run and test the app
 
