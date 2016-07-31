@@ -1,15 +1,15 @@
 # Readme
 
-The console app will parse  html code from the url an return a JSON Array of all products on the page. That app will have test cases included.
 
 
-# Requirements
+
+## Requirements
 
 - maven 3
 - java 1.7
 - JUnit 4.11
 
-### compile run and test the app
+## compile run and test the app
 
 cd moneysupermarket
 

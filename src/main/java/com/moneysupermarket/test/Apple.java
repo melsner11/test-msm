@@ -17,7 +17,7 @@ public class Apple {
      }
 
      /**
-      * @param taste the taste to set
+      * @param taste the taste to set - has to be >=1 and <=4
       */
      public void setTaste(int taste) {
          if (taste >= 1 && taste <= 4){
@@ -26,4 +26,20 @@ public class Apple {
                throw new IllegalArgumentException("Taste is out of range. (1 - 4)");
          }
      }
+
+     public int getWeight(){
+         return this.weight;
+     }
+
+     /**
+      * 
+      * @param weight - has to be >=10 and <=100
+      */
+     public void setWeight(int weight){
+         if (weight >= 10 && weight <= 100){
+             this.weight= weight;
+         } else{
+             throw new IllegalArgumentException("Weight is out of range. (10 - 100)");
+         }
+      }
 }

@@ -17,9 +17,6 @@ public class AppTest {
         super();
     }
 
-    /**
-     * Test create a new apple
-     */
     @Test
     public void testCreateApple(){
         Apple apple = new Apple();
@@ -41,5 +38,19 @@ public class AppTest {
         Apple apple = new Apple();
         thrown.expect(IllegalArgumentException.class);
         apple.setTaste(12);
+    }
+
+    @Test
+    public void testCreateAppleWithWeightInRange(){
+        Apple apple = new Apple();
+        apple.setWeight(10);
+        assertEquals(10, apple.getWeight());
+    }
+
+    @Test
+    public void testCreateAppleWithWeightOutOfRangeThrowsIllegalArgumentException(){
+        Apple apple = new Apple();
+        thrown.expect(IllegalArgumentException.class);
+        apple.setWeight(9);
     }
 }
