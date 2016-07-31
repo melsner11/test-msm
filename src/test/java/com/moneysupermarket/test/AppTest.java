@@ -53,4 +53,11 @@ public class AppTest {
         thrown.expect(IllegalArgumentException.class);
         apple.setWeight(9);
     }
+
+    @Test
+    public void testSetColor(){
+        Apple apple = new Apple();
+        apple.setColor(Color.GREEN);
+        assertNotNull(apple.getColor());
+    }
 }

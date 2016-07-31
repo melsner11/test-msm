@@ -4,7 +4,7 @@ public class Apple {
     private int weight;
     private int taste;
     private boolean hasWorm= true;
-    private int color;
+    private Color color;
 
     public Apple() {
     }
@@ -42,4 +42,16 @@ public class Apple {
              throw new IllegalArgumentException("Weight is out of range. (10 - 100)");
          }
       }
+
+    public Color getColor() {
+        return color;
+    }
+
+    /**
+     * 
+     * @param color - either RED,GREEN,BLUE
+     */
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }

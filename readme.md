@@ -1,8 +1,5 @@
 # Readme
 
-
-
-
 ## Requirements
 
 - maven 3
@@ -10,8 +7,6 @@
 - JUnit 4.11
 
 ## compile run and test the app
-
-cd moneysupermarket
 
 mvn assembly:assembly
 
