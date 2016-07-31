@@ -86,15 +86,14 @@ public class AppTest {
     public void testPeelApple(){
         Apple apple = new Apple();
         apple.peel();
-        assertEquals(FruitState.PEELED, apple.getState());
-        
+        //assertEquals(FruitState.PEELED, apple.getState());
+        assertNull(apple.getState());
     }
 
     @Test
     public void testDoNotPeelApple(){
         Apple apple = new Apple();
         assertNull(apple.getState());
-        
     }
 
     @Test
@@ -102,14 +101,40 @@ public class AppTest {
         Apple apple = new Apple();
         apple.eat();
         assertNull(apple.getState());
-        
     }
 
     @Test
     public void testEatAPeeledApple(){
         Apple apple = new Apple();
+        apple.setTaste(4);
+        apple.setHasWorm(false);
         apple.peel();
         apple.eat();
         assertEquals(FruitState.EATEN, apple.getState());
+    }
+
+    @Test
+    public void testPeelAppleWithWorm(){
+        Apple apple = new Apple();
+        apple.setHasWorm(true);
+        apple.peel();
+        assertNull(apple.getState());
+    }
+
+    @Test
+    public void testPeelAppleWithTasteSmallerFour(){
+        Apple apple = new Apple();
+        apple.setTaste(3);
+        apple.peel();
+        assertNull(apple.getState());
+    }
+
+    @Test
+    public void testPeelAppleWithTasteFourAndNoWorm(){
+        Apple apple = new Apple();
+        apple.setTaste(4);
+        apple.setHasWorm(false);
+        apple.peel();
+        assertEquals(FruitState.PEELED, apple.getState());
     }
 }

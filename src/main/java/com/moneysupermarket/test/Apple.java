@@ -70,6 +70,20 @@ public class Apple {
         this.state = state;
     }
 
+    /**
+     * @return the hasWorm
+     */
+    public boolean hasWorm() {
+        return hasWorm;
+    }
+
+    /**
+     * @param hasWorm the hasWorm to set
+     */
+    public void setHasWorm(boolean hasWorm) {
+        this.hasWorm = hasWorm;
+    }
+
     public void eat(){
         if (state != null){
             if (state.equals(FruitState.PEELED)){
@@ -79,17 +93,13 @@ public class Apple {
     }
 
     /**
-     * peel the apple only if its not peeled already and not eaten
-     * comment: i might remove the extra test since it is not requested in the description - just set state to PEELED simple does the task
-     * But in the real world you cannot peal an eaten apple.
+     * peel the apple only if its not peeled already and not eaten and has no worm and the taste is > 3
      */
     public void peel(){
-        if (state != null){
-            if (!state.equals(FruitState.EATEN) && !state.equals(FruitState.PEELED) ){
+        if (state == null){
+            if (!hasWorm() && getTaste()>3){
                 this.state = FruitState.PEELED;
             }
-        } else{
-        	 this.state = FruitState.PEELED;
         }
     }
 }
