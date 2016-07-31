@@ -69,4 +69,27 @@ public class Apple {
     public void setState(FruitState state) {
         this.state = state;
     }
+
+    public void eat(){
+        if (state != null){
+            if (state.equals(FruitState.PEELED)){
+                state =FruitState.EATEN;
+            }
+        }
+    }
+
+    /**
+     * peel the apple only if its not peeled already and not eaten
+     * comment: i might remove the extra test since it is not requested in the description - just set state to PEELED simple does the task
+     * But in the real world you cannot peal an eaten apple.
+     */
+    public void peel(){
+        if (state != null){
+            if (!state.equals(FruitState.EATEN) && !state.equals(FruitState.PEELED) ){
+                this.state = FruitState.PEELED;
+            }
+        } else{
+        	 this.state = FruitState.PEELED;
+        }
+    }
 }
