@@ -95,10 +95,12 @@ public class Apple {
     /**
      * peel the apple only if its not peeled already and not eaten and has no worm and the taste is > 3
      */
-    public void peel(){
+    public void peel(Peeler peeler){
         if (state == null){
-            if (!hasWorm() && getTaste()>3){
-                this.state = FruitState.PEELED;
+            if ((peeler != null) && !hasWorm() && getTaste()>3 ){
+                if (peeler.canPeel(color)){
+                    state = FruitState.PEELED;    
+                }
             }
         }
     }
